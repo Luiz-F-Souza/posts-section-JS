@@ -1,0 +1,89 @@
+
+.comment{
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.comment .commentBox{
+  flex-grow: 1;
+
+}
+
+.comment .commentBox .commentContent{
+  border-radius: 8px;
+  background-color: var(--gray-700);
+  flex-grow: 1;
+  padding:1rem;
+}
+
+.comment .commentBox .commentContent > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+.comment .commentBox .commentContent > header .authorAndTime h3 {
+  font-size: 0.875rem;
+  color: var(--gray-100);
+}
+.comment .commentBox .commentContent > header .authorAndTime time {
+  font-size: 0.75rem;
+  color: var(--gray-400);
+}
+
+.comment .commentBox .commentContent > header button{
+  background-color: transparent;
+  border: none;
+  color: var(--gray-400);
+
+  /* A altura de um botão segue normalmente o lineHeight tb, dai da a impressão que o item está desalinhado dentro dele */
+  line-height: 0;
+  /* Isso pq vai dar o radius tb no focus */
+  border-radius: 2px;
+}
+.comment .commentBox .commentContent > header button:hover{
+  cursor: pointer;
+  color: var(--red-danger);
+}
+
+.comment .commentBox .commentContent .commentText {
+  font-size: .875rem;
+  color: var(--gray-300);
+}
+
+.comment footer{
+  margin-top: 1rem;
+}
+
+.comment footer button{
+  color: var(--gray-400);
+  background-color: transparent;
+  border: none;
+  display: flex;
+  gap: .625rem;
+  border-radius: 2px;
+
+  /* A altura de um botão segue normalmente o lineHeight tb, dai da a impressão que o item está desalinhado dentro dele */
+  /* line-height: 0; */
+}
+.comment footer button svg{
+  align-self: center;
+}
+
+.comment footer button:hover{
+  color: var(--gray-100);
+  cursor: pointer;
+}
+
+.comment footer button:active{
+  color: var(--green-500);
+  cursor: grab;
+  outline: none;
+}
+
+.comment footer button .footerLikeCount span::before{
+  padding: 0 .25rem;
+  content: "\2022";
+}
+

@@ -1,0 +1,115 @@
+
+.post{
+  background-color: var(--gray-800);
+  border-radius: 8px;
+  padding: 2.5rem;
+}
+
+/* Afeta apenas os elementos que possuem um .post anterior a ele.. */
+.post + .post{
+  margin-top: 2rem;
+}
+
+/*  > é utilizado para pegar apenas os elementos no primeiro level da cascada .. */
+.post > header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post > header time{
+  text-align: end;
+  font-size: .875rem;
+  color: var(--gray-400);
+}
+
+.post > header .author{
+  display: flex;
+  gap: 1rem;
+}
+
+.post > header .author .authorInfo h3{
+  margin-bottom: .5rem;
+}
+
+.post > header .author .authorInfo .authorJob{
+  color: var(--gray-400);
+  font-size: .875rem;
+}
+
+.content{
+  line-height: 1.6;
+  color: var(--gray-300);
+  margin-top: 1.5rem;
+}
+
+.content p {
+  margin-top: 1rem;
+}
+
+.content a{
+  font-weight: bold;
+  color: var(--green-500);
+  text-decoration: none;
+}
+
+.content a:hover{
+  color: var(--green-300)
+}
+
+.post .commentForm{
+  width: 100%;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--gray-600);
+}
+
+.post .commentForm > strong{
+  line-height: 1.6;
+  color: var(--gray-100)
+}
+.post .commentForm > textarea{
+  width: 100%;
+  background-color: var(--gray-900);
+  line-height: 1.6;
+  color: var(--gray-100);
+  resize: none;
+  height: 6rem;
+  padding: 1rem;
+  border-radius: 8px;
+  line-height: 1.4;
+  margin-top: 1rem;
+  border: none;
+  transition: outline .1s linear;
+}
+
+/* Usar o display none pode ser ruim para acessibilidade, esta tecnica alcança o mesmo efeito sem prejudicar a acessibilidade */
+.post .commentForm:focus-within .buttonWrapper{
+  visibility: visible;
+  max-height: none;
+}
+
+.post .commentForm .buttonWrapper{
+  visibility: hidden;
+  max-height: 0;
+}
+
+.post .commentForm .buttonWrapper button[type=submit]{
+  padding: 1rem 1.5rem;
+  background-color: var(--green-500);
+  border-radius: 8px;
+  margin-top: 1rem;
+  transition: background-color .2s linear;
+  border: none;
+  color: var(--white);
+}
+
+.post .commentForm button[type=submit]:hover{
+  background-color: var(--green-300);
+  cursor: pointer;
+}
+
+.post .commentList{
+  margin-top: 2rem;
+}
+
